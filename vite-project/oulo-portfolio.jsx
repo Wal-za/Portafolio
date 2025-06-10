@@ -390,20 +390,23 @@ const techStack = [
          
 
           {/* Social Links */}
-          <div className="flex flex-col items-center space-y-4 mt-12">
-              <p className="text-center text-lg max-w-md">
-                ¿Tu sitio web está realmente transmitiendo el valor de tu marca? 🚀 En nuestro equipo analizamos oportunidades de mejora para que tu presencia digital trabaje a tu favor. Escríbenos y hablemos sin compromiso.
-              </p>
-              <a
-                href="https://wa.me/573135675861?text=Hola%2C%20estoy%20interesado%20en%20mejorar%20mi%20sitio%20web%20y%20me%20gustar%C3%ADa%20conocer%20sus%20servicios"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-full text-lg transition duration-300"
-              >
-                <MessageSquare className="mr-2 h-5 w-5" />
-                ¡Conversemos por WhatsApp!
-              </a>
-          </div>
+         <div className="flex flex-col items-center space-y-4 mt-12">
+  <p className="text-center text-lg max-w-md">
+    ¿Tu sitio web está realmente transmitiendo el valor de tu marca? 🚀 En nuestro equipo analizamos oportunidades de mejora para que tu presencia digital trabaje a tu favor. Escríbenos y hablemos sin compromiso.
+  </p>
+  <div className="flex justify-center w-full">
+    <a
+      href="https://wa.me/573135675861?text=Hola%2C%20estoy%20interesado%20en%20mejorar%20mi%20sitio%20web%20y%20me%20gustar%C3%ADa%20conocer%20sus%20servicios"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-full text-lg transition duration-300 text-center"
+    >
+      <MessageSquare className="mr-2 h-5 w-5" />
+      ¡Conversemos por WhatsApp!
+          </a>
+        </div>
+      </div>
+
 
         </div>
       </section>
