@@ -19,6 +19,7 @@ import {
   Rocket,
 } from "lucide-react"
 
+  SiHtml5,
 export default function OuloPortfolio() {
   return (
     <div className="min-h-screen bg-white">
