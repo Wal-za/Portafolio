@@ -19,8 +19,75 @@ import {
   Rocket,
 } from "lucide-react"
 
+import {
   SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiReact,
+  SiNextdotjs,
+  SiAngular,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiFirebase,
+  SiPostgresql,
+  SiGithub,
+  SiGit,
+  SiDocker,    
+  SiJavascript,
+  SiWordpress, 
+  SiRedux,
+  SiPython,
+  SiPhp,
+  SiJquery, 
+} from "react-icons/si";
+import { FaServer } from "react-icons/fa";
+
+
+
 export default function OuloPortfolio() {
+
+
+const techStack = [
+  // Lenguajes base
+  { name: "HTML5", icon: <SiHtml5 /> },
+  { name: "CSS3", icon: <SiCss3 /> },
+  { name: "JavaScript", icon: <SiJavascript /> }, 
+
+  // Frameworks y Librerías Frontend
+  { name: "React", icon: <SiReact /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
+  { name: "Angular", icon: <SiAngular /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+  { name: "Redux", icon: <SiRedux /> },  
+
+  // Backend
+  { name: "Node.js", icon: <SiNodedotjs /> },
+  { name: "Express.js", icon: <FaServer /> },
+
+  // Bases de datos
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "PostgreSQL", icon: <SiPostgresql /> },
+  { name: "Firebase", icon: <SiFirebase /> },
+
+  // DevOps / Control de versiones / Herramientas
+  { name: "Git", icon: <SiGit /> },
+  { name: "GitHub", icon: <SiGithub /> }, 
+
+  // CMS / Creación rápida
+  { name: "WordPress", icon: <SiWordpress /> },
+
+  { name: "python", icon: <SiPython /> }, 
+  { name: "PHP", icon: <SiPhp /> },
+  { name: "jQuery", icon: <SiJquery /> },
+  
+  
+];
+
+
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -179,56 +246,58 @@ export default function OuloPortfolio() {
 
       {/* Proyectos */}
       <section className="py-20 px-4 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-              Nuestro trabajo, nuestra mejor carta de presentación
-            </h2>
-          </div>
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+        Nuestro trabajo, nuestra mejor carta de presentación
+      </h2>
+    </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "E-commerce Moderno",
-                image: "/placeholder.svg?height=300&width=400",
-                tech: "React, Node.js, MongoDB",
-                impact: "Aumentó las ventas online un 250%",
-              },
-              {
-                name: "Sistema de Gestión",
-                image: "/placeholder.svg?height=300&width=400",
-                tech: "Electron, PostgreSQL",
-                impact: "Redujo el tiempo de procesamiento un 80%",
-              },
-              {
-                name: "Chatbot Inteligente",
-                image: "/placeholder.svg?height=300&width=400",
-                tech: "IA, APIs, React",
-                impact: "Automatizó el 90% de consultas frecuentes",
-              },
-            ].map((project, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          name: "Torii",
+          image: "https://torii.com.co/login/logo.png",
+          tech: `React.js, JavaScript, Bootstrap,
+                 MongoDB, Node.js, Express`,
+          impact: "Mayor interaccion con usuarios",
+          url: "https://torii.com.co/",
+        },
+        {
+          name: "Sistema Gestión de Clientes",
+          image: "https://axia.com.co/wp-content/uploads/2020/05/LOGO_Mesa-de-trabajo-1.png",
+          tech: "React, Node.js, MongoDB, VBA",
+          impact: "Redujo el tiempo de procesamiento un 80%",
+          url: "https://axia-server.netlify.app/",
+        },
+       
+      ].map((project, index) => (
+        <a
+          key={index}
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group block"
+        >
+        <div className="relative h-48 flex items-center justify-center bg-white">
+        <img
+          src={project.image || "/placeholder.svg"}
+          alt={project.name}
+          className="max-h-full max-w-full object-contain"
+        />
+      </div>
+
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-slate-800 mb-2">{project.name}</h3>
                   <p className="text-sm text-blue-600 font-semibold mb-3">{project.tech}</p>
                   <p className="text-emerald-600 font-semibold italic">"{project.impact}"</p>
                 </CardContent>
-              </Card>
+              </a>
             ))}
           </div>
         </div>
-      </section>
+</section>
+
 
       {/* Casos de Uso */}
       <section className="py-20 px-4 bg-gradient-to-br from-emerald-50 to-blue-50">
@@ -267,128 +336,75 @@ export default function OuloPortfolio() {
       </section>
 
       {/* Tecnologías */}
-      <section className="py-16 px-4 bg-slate-800">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Tecnologías que dominamos</h3>
-        <div className="flex flex-wrap justify-center gap-4">
-  {[
-    "HTML (Lenguaje de marcado)",
-    "CSS (Hojas de estilo)",
-    "JavaScript (Lenguaje de programación)",
-    "PHP (Backend)",
-    "Python (Backend)",
-    "Bootstrap (Framework CSS)",
-    "Tailwind CSS (Framework utilitario)",
-    "React (Librería de UI)",
-    "Vue.js (Framework frontend)",
-    "Angular (Framework frontend)",
-    "SASS / SCSS (Preprocesador CSS)",
-    "jQuery (Librería JS)",
-    "Vite (Empaquetador rápido)",
-    "Webpack (Empaquetador de módulos)",
-    "Babel (Transpilador JS)",
-    "Material UI (Componentes React)",
-    "Chakra UI (Componentes React)",
-    "Ant Design (Componentes UI)",
-    "Node.js (Entorno de ejecución)",
-    "Express.js (Framework backend)",
-    "Django (Framework Python)",
-    "Flask (Microframework Python)",
-    "Laravel (Framework PHP)",
-    "Next.js (React Fullstack)",
-    "Nuxt.js (Vue Fullstack)",
-    "MongoDB (NoSQL)",
-    "PostgreSQL (Relacional)",
-    "MySQL (Relacional)",
-    "SQLite (Relacional ligero)",
-    "Firebase (BaaS)",
-    "Axios (Cliente HTTP)",
-    "REST APIs (Comunicación)",
-    "GraphQL (Consultas API)",
-    "JWT (Autenticación)",
-    "WebSockets (Tiempo real)",
-    "Git (Control de versiones)",
-    "GitHub (Repositorio)",
-    "Docker (Contenedores)",
-    "Netlify (Despliegue frontend)",
-    "Vercel (Despliegue fullstack)",
-  ].map((tech, index) => (
-    <span
-      key={index}
-       className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-blue-500 text-white rounded-full text-sm font-semibold hover:scale-105 transition-transform duration-300"
-    >
-      {tech}
-    </span>
-  ))}
-</div>
+      <section className="py-20 px-6 bg-slate-800">
+      <div className="max-w-6xl mx-auto text-center">
+      <h3 className="text-4xl font-extrabold text-white mb-6 tracking-tight">
+        Tecnología que impulsa resultados
+      </h3>
 
-        </div>
+      <p className="text-slate-300 text-lg mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
+        No solo desarrollamos con las mejores herramientas. Creamos experiencias digitales que hacen crecer tu negocio y conectan con tus clientes.
+      </p>
+
+      <div className="grid gap-4 grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(180px,1fr))] justify-items-center">
+        {techStack.map((tech, index) => (
+          <div
+            key={index}
+      className="flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-emerald-500 to-blue-500 text-white rounded-full text-sm font-semibold shadow-md hover:scale-105 transition-transform duration-300"
+          >
+            <span className="text-lg">{tech.icon}</span>
+            {tech.name}
+          </div>
+        ))}
+      </div>
+
+      <p className="text-slate-300 text-lg mt-16 max-w-2xl mx-auto font-semibold leading-relaxed">
+        Tu proyecto merece resultados reales. Yo me encargo de hacerlos realidad.
+      </p>
+    </div>
       </section>
+
 
       {/* Contacto */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-              Construyamos juntos tu próxima solución
-            </h2>
-            <p className="text-xl text-slate-600">Cuéntanos tu idea. Nosotros la transformamos en experiencia</p>
-          </div>
+          <div className="text-center mb-16"> 
+  <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+    Mira lo que podemos hacer por ti
+  </h2>
+      <div className="relative overflow-hidden rounded-xl shadow-lg mx-auto max-w-4xl aspect-video">
+              <video
+              className="w-full h-full object-cover"
+              controls
+              loop
+              playsInline
+              poster="https://53.fs1.hubspotusercontent-na1.net/hubfs/53/como-hacer-una-pagina-web-en-html.jpg"
+            >
+              <source src="/media/Oulo.mp4" type="video/mp4" />
+              Tu navegador no soporta la reproducción de video.
+            </video>
+            </div>
+        </div>
 
-          <Card className="border-0 shadow-2xl">
-            <CardContent className="p-8">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Nombre</label>
-                    <Input
-                      placeholder="Tu nombre completo"
-                      className="border-2 border-gray-200 focus:border-emerald-500 rounded-lg p-3"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Correo electrónico</label>
-                    <Input
-                      type="email"
-                      placeholder="tu@email.com"
-                      className="border-2 border-gray-200 focus:border-emerald-500 rounded-lg p-3"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Cuéntanos tu proyecto</label>
-                  <Textarea
-                    placeholder="Describe tu idea, necesidad o proyecto. Mientras más detalles, mejor podremos ayudarte..."
-                    rows={6}
-                    className="border-2 border-gray-200 focus:border-emerald-500 rounded-lg p-3"
-                  />
-                </div>
-                <div className="text-center">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white px-12 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  >
-                    <Rocket className="mr-2 h-5 w-5" />
-                    Enviar mensaje
-                  </Button>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
+
+         
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 mt-12">
-            <Button variant="outline" size="lg" className="rounded-full hover:bg-slate-100">
-              <Github className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full hover:bg-slate-100">
-              <Linkedin className="h-5 w-5" />
-            </Button>
-            <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white rounded-full">
-              <MessageSquare className="mr-2 h-5 w-5" />
-              WhatsApp
-            </Button>
+          <div className="flex flex-col items-center space-y-4 mt-12">
+              <p className="text-center text-lg max-w-md">
+                ¿Tu sitio web está realmente transmitiendo el valor de tu marca? 🚀 En nuestro equipo analizamos oportunidades de mejora para que tu presencia digital trabaje a tu favor. Escríbenos y hablemos sin compromiso.
+              </p>
+              <a
+                href="https://wa.me/573135675861?text=Hola%2C%20estoy%20interesado%20en%20mejorar%20mi%20sitio%20web%20y%20me%20gustar%C3%ADa%20conocer%20sus%20servicios"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-full text-lg transition duration-300"
+              >
+                <MessageSquare className="mr-2 h-5 w-5" />
+                ¡Conversemos por WhatsApp!
+              </a>
           </div>
+
         </div>
       </section>
 
