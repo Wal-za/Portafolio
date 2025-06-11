@@ -270,6 +270,13 @@ const techStack = [
           impact: "Redujo el tiempo de procesamiento un 80%",
           url: "https://axia-server.netlify.app/",
         },
+        {
+          name: "Sistema de gestión de proyectos",
+          image: "https://thaskify.com/favicon.png",
+          tech: "React, Node.js, MongoDB, JavaScript",
+          impact: "Mejoro la Planificación y la Ejecución de los proyectos",
+          url: "https://thaskify.com/",
+        },
        
       ].map((project, index) => (
         <a
